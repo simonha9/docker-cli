@@ -198,8 +198,8 @@ func (c *ContainerContext) CreatedAt() string {
 }
 
 // CreatedAtTimestamp returns the "Created" date/time of the container as a unix timestamp
-func (c *ContainerContext) CreatedAtTimestamp() uint64 {
-	return c.c.Created
+func (c *ContainerContext) CreatedAtTimestamp() time.Time {
+	return time.Unix(c.c.Created, 0)
 }
 
 // RunningFor returns a human-readable representation of the duration for which
